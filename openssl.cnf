@@ -1,0 +1,46 @@
+[ ca ]
+default_ca               = CA_default
+[ CA_default ]
+dir                      = /etc/openvpn
+crl_dir                  = $dir/crl
+database                 = $dir/index.txt
+new_certs_dir            = $dir/certs
+certificate              = $dir/CA_cert.pem
+serial                   = $dir/serial
+crl                      = $dir/crl/crl.pem
+private_key              = $dir/private/CA_key.pem
+RANDFILE                 = $dir/private/.rand
+default_days             = 3650
+default_crl_days         = 3650
+default_md               = sha512
+unique_subject           = yes
+policy                   = policy_any
+x509_extensions          = user_extensions
+[ policy_any ]
+organizationName        = match
+organizationalUnitName  = optional
+commonName              = supplied
+[ req ]
+default_bits             = 2048
+default_keyfile          = privkey.pem
+distinguished_name       = req_distinguished_name
+x509_extensions          = CA_extensions
+[ req_distinguished_name ]
+countryName_default      = US
+localityName_default     = San Francisco
+organizationName         = Organization Name (must match CA)
+organizationName_default = MyCompany
+organizationalUnitName   = Location Name
+organizationalUnitName_default = MyCompanyTheBest
+#emailAddress             = E-mail admin
+#emailAddress_default     = test@example.com
+commonName               = Common User or Org Name
+commonName_max           = 64
+[ user_extensions ]
+basicConstraints         = CA:FALSE
+[ CA_extensions]
+basicConstraints         = CA:TRUE
+[ server ]
+basicConstraints         = CA:FALSE
+nsCertType               = server
+

@@ -1,0 +1,3 @@
+OPENVPN_PATH="/etc/openvpn"
+OPENSSL_CFG_PATH="/etc/openvpn"
+
