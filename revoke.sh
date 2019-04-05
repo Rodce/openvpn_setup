@@ -7,3 +7,5 @@ cd $OPENVPN_PATH
 openssl ca -keyfile private/CA_key.pem -cert CA_cert.pem -revoke certs/c$user.pem
 openssl ca -keyfile private/CA_key.pem -cert CA_cert.pem -gencrl -out crl/crl.pem
 
+#cleaning old user
+rm -rf /etc/openvpn/users/$user
