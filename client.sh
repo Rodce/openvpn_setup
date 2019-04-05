@@ -22,7 +22,6 @@ cp certs/c$Client.pem users/$Client/Config/$Client
 cp keys/k$Client.pem users/$Client/Config/$Client
 cp CA_cert.pem users/$Client/Config/$Client
 cp ta.key users/$Client/Config/$Client
-cp ccd/client.def ccd/$Client
 
 echo "Done generate files for "$Client"."
 exit 0
